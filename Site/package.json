@@ -1,0 +1,16 @@
+{
+  "name": "discorida",
+  "version": "0.1.0",
+  "description": "card game",
+  "main": "index.js",
+  "dependencies": {
+    "session.socket.io": "^0.2.1",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
