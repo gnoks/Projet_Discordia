@@ -1,0 +1,11 @@
+.centrage{
+    width: 50%;
+    margin : 50px auto;
+}
+/* body{
+    background-image: url("img/blizzard-background-1920.3f7pb.jpg");
+} */
+
+.nav-link{
+    display: inline-block;
+}

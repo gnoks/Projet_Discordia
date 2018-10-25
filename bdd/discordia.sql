@@ -212,7 +212,7 @@ CREATE TABLE `situer_temp` (
 CREATE TABLE `utilisateur` (
   `uti_id` int(11) NOT NULL,
   `uti_pseudo` varchar(50) NOT NULL,
-  `uti_mdp` varchar(50) NOT NULL,
+  `uti_mdp` varchar(60) NOT NULL,
   `uti_nom` varchar(50) NOT NULL,
   `uti_prenom` varchar(50) NOT NULL,
   `uti_email` varchar(50) NOT NULL,

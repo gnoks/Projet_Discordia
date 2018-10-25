@@ -1,0 +1,353 @@
+/* //////////////////////////////////////////////////////////////// RESET //////////////////////////////////////////////////////////// */
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'KGInimitableOriginal';
+    src: url('./font/KGInimitableOriginal.ttf');
+}
+
+@font-face {
+    font-family: 'KGMissKindergarten';
+    src: url('./font/KGMissKindergarten.ttf');
+}
+
+.centrage {
+    margin: auto;
+    max-width: 1024px;
+}
+
+.headerBkg {
+    background: url('img/header_bkg.png') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    z-index: -1000;
+    min-height: 1000px;
+    background-position: bottom center;
+}
+
+.mainBkg {
+    background: url('img/main_bkg.png') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    z-index: -1000;
+    min-height: 1000px;
+    background-position: top center;
+
+}
+
+.footerBkg {
+    background: url('img/footer_bkg.png') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    z-index: -1000;
+    min-height: 1000px;
+    background-position: bottom center;
+}
+
+body {
+    /* background: url('img/new_bkg.png') no-repeat center ;
+    background-size:cover;  */
+    /* width: 100%;
+    height: 100%; */
+    margin: 0 auto;
+    font-family: 'KGInimitableOriginal', Arial, Helvetica, sans-serif;
+    font-size: .9em;
+    letter-spacing: .3em;
+    color: #ffff;
+    position: relative;
+}
+
+header {
+    text-align: center;
+    position: relative;
+    height: 100vh;
+}
+
+footer, main{
+    padding-top: 5%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    padding-top: 5%;
+    margin-bottom: 10%;
+    width: 100%;
+}
+
+
+header>h1,
+h2 {
+    display: inline-block;
+    background-color: #6ac4d6;
+    margin: 0 auto;
+    padding: .5em;
+}
+
+header>h2 {
+    margin-top: 1.675em;
+    background-color: #383c48;
+    position: relative;
+    padding: 0.91em .8em;
+}
+
+header>h2::before {
+    content: url('img/bandeau.png');
+    position: absolute;
+    top: 0;
+    left: -33px;
+}
+
+header>h2::after {
+    content: url('img/bandeau.png');
+    position: absolute;
+    transform: scaleX(-1);
+    top: 0;
+    right: -33px;
+}
+
+header>p {
+    font-size: 1.5em;
+    margin: 3% 0 0 0;;
+}
+
+aside {
+    font-size: 1.8em;
+}
+
+.navigation {
+    text-align: center;
+    margin-top: 4%;
+    /* position: absolute;
+    bottom: 4%;
+    transform: translateX(-50%);
+    left: 50%; */
+}
+
+.scroller {
+    background: url('img/arrow_scroll.png');
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    margin-top: 3%;
+}
+
+.flow {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.nuage {
+    animation: slidein 30s linear infinite;
+    position: absolute;
+    left: -1920px;
+    max-height: 960px;
+}
+
+.nuage0 {
+    animation: slidein 30s linear forwards;
+    position: absolute;
+    left: 0px;
+    max-height: 960px;
+}
+
+.nuage1 {
+    position: absolute;
+    left: -1920px;
+    animation: slidein 30s linear 1s infinite;
+    max-height: 960px;
+}
+
+.nuage2 {
+    position: absolute;
+    left: -1920px;
+    animation: slidein 20s linear 3s infinite;
+    max-height: 960px;
+
+}
+
+.nuage3 {
+    position: absolute;
+    left: -1920px;
+    animation: slidein 30s linear 15s infinite;
+    max-height: 960px;
+}
+
+.nuage4 {
+    position: absolute;
+    left: -1920px;
+    animation: slidein 20s linear 16s infinite;
+    max-height: 960px;
+}
+
+.nuage5 {
+    position: absolute;
+    left: -1920px;
+    animation: slidein 30s linear 17s infinite;
+    max-height: 960px;
+}
+
+@keyframes slidein {
+    from {
+        transform: translatex(0);
+    }
+
+    to {
+        transform: translateX(3840px);
+    }
+}
+
+/* ////////////////////////////////////// MAIN //////////////////////////////////////////////// */
+
+main {
+    text-align: center;
+    position: relative;
+    height: 100vh;
+}
+
+main>h3 {
+    font-size: 2em;
+    line-height: 2em;
+}
+
+main>h3>span {
+    color: #fbc580;
+}
+
+main>span {
+    font-size: 1.5em;
+    display: block;
+}
+
+main span:nth-child(2) {
+    margin: 3% 0;
+}
+
+main span:nth-child(3) {
+    font-size: 1.8em;
+    color: #635b8e;
+    text-decoration: underline;
+}
+
+main>form {
+    text-align: center;
+    display: block;
+    margin: 60px auto 0 auto;
+}
+
+main>form>input {
+    border-radius: 3.5px;
+    border: none;
+    padding: 0.5em;
+
+}
+
+main input,
+main button {
+    display: block;
+    margin: 0;
+    width: 430px;
+    line-height: 2em;
+    margin: auto;
+}
+
+main input {
+    margin: 0 auto 4% auto;
+}
+
+.radio {
+    display: inline-block;
+    width: 33px;
+}
+
+.condition {
+    font-size: 12px;
+    letter-spacing: 0.09em;
+    display: inline-block;
+    margin-bottom: 7%;
+}
+
+svg {
+    position: absolute;
+    top: 60px;
+    left: -100px;
+
+}
+
+.subscribe {
+    background: #6ac4d6;
+    color: #ffff;
+    border: none;
+    font-size: 31px;
+    font-family: 'KGInimitableOriginal', Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    width: 300px;
+}
+
+/* ////////////////////////////////////// FOOTER //////////////////////////////////////////////// */
+
+
+footer>article {
+    width: 1020px;
+    background-color: #756f9ec9;
+    padding: 35px 85px;
+    clear: both;
+}
+
+footer>article>h3,
+footer>article>p:last-child {
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.8em;
+
+}
+
+.story {
+    font-family: 'KGMissKindergarten';
+    width: 400px;
+    float: left;
+    margin: 35px 25px 35px 0;
+    letter-spacing: 1px;
+    text-align: justify;
+}
+
+footer>article>p:last-child {
+    clear: both;
+    color: #f7c383;
+    font-size: 1.5em;
+}
+
+.footer {
+    background-color: #635b8e;
+    text-align: center;
+    line-height: 4em;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+footer .scroller {
+    transform: rotate(180deg);
+}
+
+.footer>p {
+    margin: 0;
+}
