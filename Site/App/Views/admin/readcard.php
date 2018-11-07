@@ -1,4 +1,5 @@
 <h1>Liste des cartes</h1>
+<?php if(count($cartes) > 0) : ?>
 <table class="table">
 <thead>
 <tr>
@@ -20,9 +21,12 @@
 <a href="?p=admin&action=editcard&id=<?php echo $v['car_id']; ?>" class="btn btn-dark">Edit</a>
 </td>
 <td>
-<a href="" class="btn btn-danger">Delete</a>
+<a href="?p=admin&action=deletecard&id=<?php echo $v['car_id']; ?>" class="btn btn-danger">Delete</a>
 </td>
 </tr>
 <?php endforeach; ?>
 </tbody>
 </table>
+<?php else : ?>
+<p>Il n'y a aucune carte !</p>
+<?php endif; ?>

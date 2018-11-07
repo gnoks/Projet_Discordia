@@ -442,7 +442,7 @@ ALTER TABLE `deck`
 --
 ALTER TABLE `hero_temp`
   ADD CONSTRAINT `her_hero_ibfk` FOREIGN KEY (`her_hero_fk`) REFERENCES `hero` (`her_id`),
-  ADD CONSTRAINT `her_partie_ibfk` FOREIGN KEY (`her_partie_fk`) REFERENCES `hero` (`her_id`),
+  ADD CONSTRAINT `her_partie_ibfk` FOREIGN KEY (`her_partie_fk`) REFERENCES `partie` (`par_id`),
   ADD CONSTRAINT `her_utilisateur_ibfk` FOREIGN KEY (`her_utilisateur_fk`) REFERENCES `utilisateur` (`uti_id`);
 
 --

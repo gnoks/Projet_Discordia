@@ -1,39 +1,40 @@
 <?php
+session_start();
 /**
 * Index Discordia
 * Copyright :  Tous droits réservés.
 * Editeur : Timothy PREFOL (timothy.prefol@gmail.com) && Yohann Cuenot (yohann.cuenot@hotmail.fr)
 * Version 0.1
 */
+require_once('loader.php');
+require_once('ini.php');
 
-function loadClass( $className ) {
-    $_str_file = 'classes/' . strtolower( $className ) . '.php';
-    if( file_exists( $_str_file ) )
-        require_once( $_str_file );
+if(!isset($_SESSION['user'])){
+    $_SESSION['user'] = [];
+}
+$ctrl = 'AccueilController';
+$method = 'affichage';
+
+if(!empty($_GET['c'])){
+    $ctrl = ucfirst($_GET['c']).'Controller';
 }
 
-function loadModel( $modelName ) {
-    $_str_file = 'models/' . strtolower( $modelName ) . '.php';
-    if( file_exists( $_str_file ) )
-        require_once( $_str_file );
+if (class_exists($ctrl)) {
+    $controller = new $ctrl;    
+}else{
+    header('Location:views/page_404.html');
+    exit;
 }
 
-function loadController( $controllerName ) {
-    $_str_file = 'controllers/' . strtolower( $controllerName ) . '.php';
-    if( file_exists( $_str_file ) )
-        require_once( $_str_file );
+if (!empty($_GET['a']) ){
+    $method = $_GET['a'];
+
 }
 
-spl_autoload_register('loadClass');
-spl_autoload_register('loadModel');
-spl_autoload_register('loadController');
-if (isset($_GET['connected'])) {
-    $ctrl = new InscriptionController;
-    $ctrl->inscrire();
-}elseif(isset($_GET['login'])){
-    $ctrl = new ConnectionController;
-    $ctrl ->connection();
-}else {
-    $ctrl = new AccueilController;
-    $ctrl->affichage();
+if (method_exists($controller,$method)) {
+    $controller -> $method();    
+}else{
+    header('Location:views/page_404.html');
+    exit;
 }
+

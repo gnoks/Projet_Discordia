@@ -36,6 +36,7 @@ class Zone {
             $main[] = $pioche[0];
             array_shift($pioche);
         }
+        
     }
 
     public function deplacerCarte(array &$tab1, array &$tab2, $i) {

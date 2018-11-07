@@ -1,1 +1,1 @@
-<h1><?php echo _('Admin Page'); ?></h1>
+<h1>Admin Page</h1>

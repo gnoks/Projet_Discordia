@@ -35,19 +35,34 @@ class AdminController extends Controller {
         if(isset($_GET['id'])) $id = $_GET['id'];
         else $this->notFound();
         $carteModel->update($_POST, $id);
-        $this->editcard();
+        $this->readcard();
     }
 
     public function addingcard(){
         $carteModel = new CarteModel;
         $carteModel->create($_POST);
-        $this->addcard();
+        $this->readcard();
     }
 
     public function readcard(){
         $carteModel = new CarteModel;
+        $habiliter = new HabiliterModel;
         $cartes = $carteModel->read();
+        foreach($cartes as $k=>$v){
+            $cartes[$k]['habiliter'] = $habiliter->readHabiliterByCard($v['car_id'])['hab_type'];
+        }
         $this->render('admin/readcard', \compact('cartes'));
+    }
+
+    public function deletecard(){
+        $carteModel = new CarteModel;
+        $habiliter = new HabiliterModel;
+        
+        if(!empty($_GET['id'])){
+            $habiliter->delete($_GET['id']);
+            $carteModel->delete($_GET['id']);
+        } else $this->notFound();
+        $this->readcard();
     }
 
 }
