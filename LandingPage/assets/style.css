@@ -276,16 +276,67 @@ main button {
 
 main input {
     margin: 0 auto 4% auto;
+    box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+}
+::placeholder{
+    color:#635b8e;
+}
+input:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0 1000px #f1dde8 inset;
+}
+input:focus
+{
+   background-color: #f1dde8;
 }
 
-.radio {
+.check {
     display: inline-block;
-    width: 33px;
-}
+    width: 15px;
+    height: 15px;
+  }
+  .check input {
+    display: none;
+  }
+  .check input:checked + .box {
+    background-color: #f1dde8;
+  }
+  .check input:checked + .box:after {
+    top: 0;
+  }
+  .check .box {
+    width: 100%;
+    height: 100%;
+    transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+    border: 1px solid transparent;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+  }
+  .check .box:after {
+    width: 60%;
+    height: 25%;
+    content: '';
+    position: absolute;
+    border-left: 3.5px solid;
+    border-bottom: 3.5px solid;
+    border-radius: 1px;
+    border-color: #635b8e;
+    transform: rotate(-45deg) translate3d(0, 0, 0);
+    transform-origin: center center;
+    transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+    left: 0;
+    right: 0;
+    top: 200%;
+    bottom: 5%;
+    margin: auto;
+  }
 
 .condition {
     font-size: 12px;
-    letter-spacing: 0.09em;
+    letter-spacing: 0.15em;
     display: inline-block;
     margin-bottom: 7%;
     color: white;
@@ -327,6 +378,7 @@ svg {
     font-size: 31px;
     border: 4px solid;
     cursor: pointer;
+    border-radius: 3.5px;
   }
   
   .button::after {
@@ -450,7 +502,7 @@ footer .scroller {
     color: #635b8e;
   }
   .modal-close {
-    color: #635b8e;
+    color:#635b8ea9;
     line-height: 50px;
     font-size: 2em;
     position: absolute;
@@ -459,6 +511,9 @@ footer .scroller {
     top: 12px;
     text-decoration: none;
   }
+ .modal-close:hover{
+    color: #635b8e;
+ }
 .reglementation{
     text-align: center;
     font-family: 'KGMissKindergarten', sans-serif;
@@ -525,6 +580,19 @@ svg{
         box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
         transform: skewY(0rad);
     }
+}
+
+#suscribe::after {
+    content:attr(data-email);
+    font-size: 1.2em;
+    display:inline-block;
+    color: #635b8e;
+    background-color: #6ac4d68f;
+    font-weight: 900;
+    margin-top: 2em;
+    line-height: 3em;
+    padding:0 1em;
+    border-radius: 3.5px;
 }
 
 @media screen and ( max-width: 900px) {
@@ -598,6 +666,7 @@ svg{
     }
     footer>article {
         padding: 1em 1.5em;
+        /* margin: 0 2em; */
     }
     .story {
         font-family: 'KGMissKindergarten';
@@ -614,6 +683,26 @@ svg{
     }
     footer>article>p:last-child {
         font-size: .7em;
-        margin-top: 1em;
+        padding-top: 1em;
+    }
+    .footer{
+        font-size: .5em;
+    }
+    .modal-window > div {
+        width: 400px;
+        z-index: 1000;
+    }
+    .reglementation{
+        font-size: .5em;
+    }
+    .modal-window > div > h3{
+        font-size: .8em;
+    }
+    .modal-close{
+        font-size: 1em;
+    }
+    #suscribe::after {
+        content:attr(data-email);
+        font-size: .8em;
     }
 }

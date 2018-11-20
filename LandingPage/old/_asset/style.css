@@ -86,12 +86,10 @@ a {
     text-align: center;
 }
 #suscribe::after {
-    content:attr(data-email);
+    content: attr(data-email);
     margin-top: 50px;
-    display:block;
-    /* border: 1px solid black; */
-
-
+    display: block;
+    color: #635B8E;
 }
 
 #button {
